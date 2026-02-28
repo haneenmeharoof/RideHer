@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>RideHer 💜</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Leaflet map CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-sA+e2/6kZtG2m1s0bQ6w7D0Q5g6s4jv6Y3g9g2Jp0mM=" crossorigin=""/>
 </head>
 <body>
 
@@ -41,18 +43,25 @@
         <h2>Ride Verification 🔐</h2>
         <p>Show this QR to your driver</p>
         <img id="qrImage" width="150">
+        <p id="rideIdText" class="muted"></p>
+        <div class="driverRow">
+            <img id="driverPhoto" src="" alt="driver" class="driverPhoto hidden">
+            <p id="driverNameDisplay" class="muted"></p>
+        </div>
         <button onclick="startArrival()">Driver Arrived & Scan</button>
     </div>
 </section>
 
 <!-- WAITING -->
 <section id="waiting" class="screen hidden">
-    <div class="card">
+    <div class="card with-map">
         <h2>Driver On The Way 🚗</h2>
-        <p>Arrival in <span id="arrivalTime">5</span> mins</p>
+        <p id="driverNameWaiting"></p>
+        <p>Arrival in <span id="arrivalTime"></span> mins</p>
 
         <div class="map">
-            <div class="road"></div>
+            <div id="waitingMap" class="leaflet-map"></div>
+                <iframe id="waitingIframe" class="map-iframe hidden"></iframe>
             <div id="arrivalCar">🚗</div>
         </div>
     </div>
@@ -60,13 +69,18 @@
 
 <!-- RIDE -->
 <section id="ride" class="screen hidden">
-    <div class="card">
+    <div class="card with-map">
         <h2>Ride In Progress 🛣️</h2>
 
         <div class="map">
+            <div id="rideMap" class="leaflet-map"></div>
+            <iframe id="rideIframe" class="map-iframe hidden"></iframe>
             <div class="road"></div>
             <div id="rideCar">🚘</div>
         </div>
+
+        <p id="driverNameRide" class="muted"></p>
+        <div id="coords" class="coords muted">Lat: --, Lng: --</div>
 
         <div class="progressBar">
             <div id="progress"></div>
