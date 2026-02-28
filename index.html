@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>RideHer 💜</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOGIN -->
+<section id="login" class="screen">
+    <div class="card">
+        <h1>RideHer 💜</h1>
+        <p class="subtitle">Safe Travel for Women 🌙</p>
+
+        <input type="text" placeholder="Full Name">
+        <input type="text" placeholder="Phone Number">
+        <input type="email" placeholder="Email">
+
+        <button onclick="goToBooking()">Enter →</button>
+    </div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking" class="screen hidden">
+    <div class="card">
+        <h2>Book Your Ride 🚘</h2>
+
+        <input type="text" id="pickup" placeholder="📍 Pickup Location">
+        <input type="text" id="destination" placeholder="🎯 Destination">
+
+        <div id="drivers"></div>
+
+        <button onclick="confirmRide()">Confirm Ride →</button>
+    </div>
+</section>
+
+<!-- QR -->
+<section id="qrScreen" class="screen hidden">
+    <div class="card center">
+        <h2>Ride Verification 🔐</h2>
+        <p>Show this QR to your driver</p>
+        <img id="qrImage" width="150">
+        <button onclick="startArrival()">Driver Arrived & Scan</button>
+    </div>
+</section>
+
+<!-- WAITING -->
+<section id="waiting" class="screen hidden">
+    <div class="card">
+        <h2>Driver On The Way 🚗</h2>
+        <p>Arrival in <span id="arrivalTime">5</span> mins</p>
+
+        <div class="map">
+            <div class="road"></div>
+            <div id="arrivalCar">🚗</div>
+        </div>
+    </div>
+</section>
+
+<!-- RIDE -->
+<section id="ride" class="screen hidden">
+    <div class="card">
+        <h2>Ride In Progress 🛣️</h2>
+
+        <div class="map">
+            <div class="road"></div>
+            <div id="rideCar">🚘</div>
+        </div>
+
+        <div class="progressBar">
+            <div id="progress"></div>
+        </div>
+
+        <p id="rideStatus">On the way...</p>
+
+        <button class="sosBtn" onclick="toggleSOS()">🚨 SOS</button>
+    </div>
+</section>
+
+<!-- REVIEW -->
+<section id="review" class="screen hidden">
+    <div class="card center">
+        <h2>Rate Your Ride ⭐</h2>
+
+        <select>
+            <option>⭐ 1</option>
+            <option>⭐ 2</option>
+            <option>⭐ 3</option>
+            <option>⭐ 4</option>
+            <option>⭐ 5</option>
+        </select>
+
+        <input type="text" placeholder="Optional Feedback">
+
+        <button onclick="finishRide()">Submit</button>
+        <button onclick="finishRide()">Skip</button>
+    </div>
+</section>
+
+<!-- THANK YOU -->
+<section id="thankyou" class="screen hidden">
+    <div class="card center">
+        <h2>Thank You for Riding With RideHer 💜</h2>
+        <p>Your safety is our priority.</p>
+        <button onclick="resetApp()">Book Another Ride</button>
+    </div>
+</section>
+
+<!-- SOS POPUP -->
+<div id="sosPopup" class="sosPopup hidden">
+    <p>Emergency Alert 🚨</p>
+    <button onclick="sendSOS('Police')">👮 Police</button>
+    <button onclick="sendSOS('Volunteers')">👩 Volunteers</button>
+    <button onclick="sendSOS('Contacts')">📞 Contacts</button>
+    <button onclick="toggleSOS()">❌ Cancel</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

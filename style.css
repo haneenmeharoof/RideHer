@@ -1,0 +1,169 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif; /* Slightly more modern font */
+    /* NEW: Soft light lavender gradient background */
+    background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+    color: #4a148c; /* Dark indigo text for better contrast on purple */
+}
+
+.screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.hidden {
+    display: none;
+}
+
+.card {
+    background: white;
+    width: 90%;
+    max-width: 400px;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(74, 20, 140, 0.15); /* Tinted shadow */
+    transition: 0.3s ease;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #6a1b9a; /* Deep purple for headers */
+}
+
+.subtitle {
+    text-align: center;
+    color: #7b1fa2; /* Soft indigo-purple for subtitles */
+    margin-bottom: 15px;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 10px;
+    border: 1px solid #e1bee7; /* Soft purple border */
+    font-size: 1rem;
+}
+
+input {
+    background-color: #fdfcff;
+}
+
+input:focus {
+    outline: none;
+    /* NEW: Medium Amethyst highlight */
+    border: 2px solid #9966CC;
+}
+
+button {
+    /* NEW: Medium Amethyst primary color */
+    background: #9966CC;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+button:hover {
+    /* NEW: Slightly deeper shade for hover */
+    background: #8e5dc0;
+}
+
+#drivers div {
+    /* NEW: Very light purple background for driver cards */
+    background: #f3e5f5;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+#drivers div.selected {
+    /* NEW: Primary accent purple for selection */
+    background: #9966CC;
+    color: white;
+    border-color: #8e5dc0;
+}
+
+/* Update driver mutual friend text color in JS logic if applied */
+small.mutual-text {
+    color: #7b1fa2;
+}
+
+/* Map */
+.map {
+    height: 100px;
+    background: #f1f0f3; /* Neutral off-white/grey */
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    margin: 10px 0;
+    border: 1px solid #e1bee7;
+}
+
+.road {
+    position: absolute;
+    top: 45%;
+    height: 10px;
+    width: 100%;
+    background: #d1c4e9; /* Light lavender-grey for the road */
+}
+
+#arrivalCar, #rideCar {
+    position: absolute;
+    top: 30%;
+    left: 0;
+    font-size: 22px;
+}
+
+/* Progress */
+.progressBar {
+    height: 10px;
+    background: #e1bee7; /* Softest lavender background */
+    border-radius: 10px;
+    overflow: hidden; /* Ensures bar stays inside rounded corners */
+}
+
+#progress {
+    height: 100%;
+    width: 0%;
+    /* NEW: Highlight purple for progress */
+    background: #9966CC;
+    border-radius: 10px;
+}
+
+.sosBtn {
+    background: #e53935; /* Kept red for urgency, but a slightly better tone */
+    margin-top: 20px;
+}
+
+.sosPopup {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+.sosPopup p {
+    color: #e53935;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 0;
+}
+
+.sosPopup button {
+    margin: 5px 0;
+}
+
+/* Centering utility */
+.center {
+    text-align: center;
+}
